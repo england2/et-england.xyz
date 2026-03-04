@@ -8,7 +8,10 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
-  line-height: 1.90em;
+  line-height: 1.20em;
+
+  /*ai-- this isn't applying! It's being overwritten by the mermaid styling somehow!*/
+  font-family: Optima, Candara, Calibri, Arial, sans-serif;
 }
 
 a {
@@ -92,31 +95,28 @@ hr {
 
 /* code */
 pre {
-  background: #272822;
-  border: 1px solid #7f94a8;
-  box-shadow: 4px 4px 10px #1f2a35;
+  background: #27282290;
+  border: 1px solid #2e3943;
+  box-shadow: 2px 2px 5px #1f2a3555;
   padding: 1em;
   overflow-x: auto;
 }
 code {
-    background: #272822;
-  color: #e8f0f7;
+    background: #27282290;
+    color: #e8f0f7;
 }
 pre code { background: none; }
 
 /* Mermaid diagrams */
 .mermaid {
-  background: #3b4f63;
-  border: 1px solid #7f94a8;
+  background: #27282250;
+  border: 1px solid #272822;
 
-  box-shadow: 4px 4px 10px #1f2a35;
+  box-shadow: 2px 2px 5px #1f2a3555;
   padding: 0.8em;
   overflow-x: auto;
-  /*
-   * ai--done this font is applied to the pre that ends up getting turned into a mermaid diagram. it is
-   * NOT applied to the actual font in the diagram
-   */
-  font-family: "Noto Sans Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, Monaco, "Courier New", monospace;
+  /*ai-- this font is applied to the pre that ends up getting turned into a mermaid diagram. it*/
+  /*font-family: Optima, Candara, Calibri, Arial, sans-serif;*/
 }
 .mermaid svg {
   max-width: 100%;

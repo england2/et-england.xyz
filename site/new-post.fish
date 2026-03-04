@@ -17,9 +17,13 @@ end
 
 set -l post_file "content/post/$date_str-$slug.md"
 
-printf "+++\n"
-printf "title = \"%s\"\n" "$safe_title"
-printf "date = %s\n" "$date_str"
-printf "slug = \"%s\"\n" "$slug"
-printf "+++\n\n"
-printf "Post file: %s\n" "$post_file" >&2
+set -l s "\
++++
+title = \"$safe_title\"
+date = $date_str
+slug = \"$slug\"
++++
+"
+
+echo $s > $post_file
+echo $post_file

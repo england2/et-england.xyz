@@ -8,7 +8,7 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
-  line-height: 1.25;
+  line-height: 1.90em;
 }
 
 a {
@@ -103,6 +103,25 @@ code {
   color: #e8f0f7;
 }
 pre code { background: none; }
+
+/* Mermaid diagrams */
+.mermaid {
+  background: #3b4f63;
+  border: 1px solid #7f94a8;
+
+  box-shadow: 4px 4px 10px #1f2a35;
+  padding: 0.8em;
+  overflow-x: auto;
+  /*
+   * ai--done this font is applied to the pre that ends up getting turned into a mermaid diagram. it is
+   * NOT applied to the actual font in the diagram
+   */
+  font-family: "Noto Sans Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, Monaco, "Courier New", monospace;
+}
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
 
 /* misc elements */
 img, iframe, video { max-width: 100%; }

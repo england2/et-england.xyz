@@ -1,7 +1,7 @@
 body {
-  font-family: Optima, Candara, Calibri, Arial, sans-serif;
+  font-family: "Noto Sans Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, Monaco, "Courier New", monospace;
 }
 code {
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: "Noto Sans Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, Monaco, "Courier New", monospace;
   font-size: 85%;
 }

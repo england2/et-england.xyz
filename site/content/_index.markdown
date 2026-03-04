@@ -2,7 +2,6 @@
 title: Home
 ---
 
-[<img src="https://simpleicons.org/icons/github.svg" style="max-width:15%;min-width:40px;float:right;" alt="Github repo" />](https://github.com/yihui/hugo-xmin)
 
 # Elan England
 
@@ -24,7 +23,9 @@ cat $FILE | nc sb. <site.url>
 ```
 
 Additionally, there is a GUI web-interface that is exposed by a plain-old webserver.
-The diagram below shows that both the CLI and GUI interfaces both talk to the same database managing microservice. 
+The diagram below shows that both the CLI and GUI interfaces both talk to the same database-managing microservice. 
+
+
 
 A good example of how splitting things up can _sometimes_ make architecture easier to reason about!
 
@@ -50,14 +51,15 @@ flowchart LR
     DB -->|SQL queries to pastes table| MYSQL
 ```
 
-<!-- web term -->
+I also implemented full end-to-end testing and CI/CD with my local Kubernetes cluster!
+Read the [full post here](/shellbin/) for more details.
 
 <br>
     
 ## [_Web Terminal_](/web-terminal/)
 ---
 
-This is a larger, abandoned project that I took up because I wanted to do something big and scary sounding (at the time) in Kubernettes. Basically, I wanted to write some custom golang code to interact with the Kubernetes API and create/destroy pods depending on user load.
+This is a larger, abandoned project that I took up because I wanted to do something that at the time sounded really big and scary sounding. Basically, I wanted to write some custom golang code to interact with the Kubernetes API to create, destroy, and scale pods based on user load.
 
 Additionally, I wanted to create an end-
 

@@ -16,12 +16,8 @@ menu:
     - name: Home
       url: ""
       weight: 1
-    - name: About
-      url: "about/"
-      weight: 2
     - name: All Work
-      url: "all-work/"
-      weight: 2
+      url: "work"
 
 
 params:

@@ -1,8 +1,7 @@
 +++
 title = "Small Plane Preflight and Start Flowchart"
-date = 2026-03-04
-categories = ["aviation", "diagram"]
-tags = ["mermaid", "flowchart", "checklist"]
+date = 2026-03-03
+slug = "flow-chart-test"
 +++
 
 This page tests Mermaid rendering with an inspect/start decision flow.

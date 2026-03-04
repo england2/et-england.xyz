@@ -27,15 +27,6 @@ menu:
       weight: 1
     - name: About
       url: "about/"
-      weight: 2
-    - name: Categories
-      url: "categories/"
-      weight: 3
-    - name: Tags
-      url: "tags/"
-      weight: 4
-    - name: Subscribe
-      url: "index.xml"
 ```
 
 Alternatively, you can add `menu: main` to the YAML metadata of any of your pages, so that these pages will appear in the menu.

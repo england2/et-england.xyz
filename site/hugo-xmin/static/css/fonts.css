@@ -1,8 +1,46 @@
-body {
-    font-family: Optima, Candara, Calibri, Arial, sans-serif;
-    font-size: 1.2em;
+@font-face {
+  font-family: "Writer";
+  src: url("/fonts/writer/writer-400-normal.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
-code {
-  font-family: "Noto Sans Mono", "Cascadia Mono", "DejaVu Sans Mono", Menlo, Consolas, Monaco, "Courier New", monospace;
-  font-size: 0.80em;
+
+@font-face {
+  font-family: "Anonymous Pro";
+  src: url("/fonts/Anonymous_Pro/AnonymousPro-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Serif";
+  src: url("/fonts/IBM_Plex_Serif/IBMPlexSerif-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Serif";
+  src: url("/fonts/IBM_Plex_Serif/IBMPlexSerif-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  font-family: "Writer", "Courier New", Courier, monospace;
+  font-size: 0.95em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "IBM Plex Serif", Georgia, "Times New Roman", serif;
+  font-weight: 300;
+}
+
+code, pre, kbd, samp {
+  font-family: "Anonymous Pro", "Courier New", "Monospace";
+  font-size: 1.00em;
 }

@@ -2,7 +2,7 @@ html {
   min-height: 100%;
   isolation: isolate;
   background:
-    linear-gradient(180deg, #121316 0%, #121316 100%);
+    linear-gradient(180deg, #171113 0%, #171113 100%);
 }
 
 html::before {
@@ -22,7 +22,7 @@ body {
   position: relative;
   z-index: 1;
   background: #12131620;
-  color: #e8f0f7;
+  color: #e0d3da;
   max-width: 800px;
   margin: auto;
   padding: 1em;
@@ -144,6 +144,11 @@ blockquote {
   background: #3b4f63;
   border-left: 5px solid #9cb9d3;
   padding: 3px 1em 3px;
+}
+
+hr {
+    color: #351D30;
+    border-style: solid;
 }
 
 table {

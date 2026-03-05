@@ -11,8 +11,7 @@ title: Home
 
 <br>
 
-## [**Shellbin**](/shellbin/)
----
+## [Shellbin](/shellbin/)
 
 Shellbin is a microservice architecture project that I built to exercise my understanding of CI/CD for cloud-native applications.
 

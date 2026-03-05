@@ -6,7 +6,7 @@ title: Home
 
 **On this site you can find**
 - My [resume](/resume/).
-- [All posts](/all-posts/) about various technical topics.
+- [All articles](/all-posts/) about various technical topics.
 -  Write-ups for larger scale projects I've completed. Scroll below to see introductions, and click on the header to see the full write-up page.
 
 <br>
@@ -23,7 +23,7 @@ cat $FILE | nc sb.cat-z.xyz
 
 Additionally, there is a GUI web-interface that is exposed by a plain-old webserver written in Golang.
 
-The CLI and the web-interface both talk with the same decoupled microservice to which itself talks to the database, which is expressed in the diagram below.
+The CLI and the web-interface both talk with the same decoupled microservice which itself talks to the database. This is expressed in the diagram below.
 
 ```mermaid
 flowchart LR
@@ -47,7 +47,7 @@ flowchart LR
     DB -->|SQL queries to pastes table| MYSQL
 ```
 
-The diagram below shows that both the CLI and GUI interfaces both talk to the same database-managing microservice. 
+In total, there are 4 discrete container images involved in this project. A webserver, a database service, a netcat service, and the MysQL database software itself.
 
 The main goal was to implement a full CI/CD developement pipeline for microservice style software. 
 
@@ -70,6 +70,6 @@ However, I learned a lot about Kubernetes in the process, and even had the oppor
 
 ## [Kubernetes Cluster](/cluster/)
 
-My local k8s test-bench.
+My local kubernetes cluster, lovingly named `Hell pit`.
 
 <img src="/images/cluster.png" alt="Kubernetes cluster test bench" style="width: 50%; display: block; margin: 0 auto;">

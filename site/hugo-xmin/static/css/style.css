@@ -22,7 +22,7 @@ body {
   position: relative;
   z-index: 1;
   background: #12131620;
-  color: #e0d3da;
+  color: #fceff4;
   max-width: 800px;
   margin: auto;
   padding: 1em;
@@ -31,12 +31,12 @@ body {
 }
 
 a {
-  color: #9fd3ff;
+  color: #ffc8f3;
 }
 
 a:hover,
 a:focus {
-  color: #cbe7ff;
+  color: #ffc8f3;
 }
 
 /* header and footer areas */
@@ -125,7 +125,7 @@ pre code { background: none; }
 
 /* Mermaid diagrams */
 .mermaid {
-  background: #27282220;
+  background: #ffffff09;
   border: 1px solid #272822;
 
   box-shadow: 2px 2px 5px #1f2a3555;

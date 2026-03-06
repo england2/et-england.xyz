@@ -26,7 +26,7 @@ body {
   max-width: 800px;
   margin: auto;
   padding: 1em;
-  line-height: 1.20em;
+  line-height: 1.35em;
   font-family: Optima, Candara, Calibri, Arial, sans-serif;
 }
 
@@ -77,24 +77,23 @@ a:focus {
 }
 .index-title {
   margin: 0;
-  font-size: 1.03rem;
   line-height: 1.00;
-  font-weight: 600;
 }
 .index-title a {
-  color: #e8f0f7;
+  /*color: #e8f0f7;*/
+  font-size: 1.0rem;
+  line-height: 0.85em;
   text-decoration: none;
 }
 .index-title a:hover,
 .index-title a:focus {
-  color: #cbe7ff;
   text-decoration: underline;
 }
 .index-date {
   margin: 0.2rem 0 0;
   color: #b7c7d5;
-  font-size: 0.84rem;
-  line-height: 1.2;
+  font-size: 1.0rem;
+  line-height: 0.85em;
   font-weight: 400;
 }
 footer {

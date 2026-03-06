@@ -5,7 +5,7 @@ if test (count $argv) -lt 1
     exit 1
 end
 
-set -l title $argv[1]
+set -l title (string join " " -- $argv[1..-1])
 set -l date_str (date +%F)
 
 set -l safe_title (string replace -a '"' '\"' -- $title)

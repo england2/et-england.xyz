@@ -2,12 +2,14 @@
 title: Home
 ---
 
-# Elan England
+# Elan England's Website
 
-**On this site you can find**
+<br >
+    
+This site has:
 - My [resume](/resume/).
 - [All articles](/all-posts/) about various technical topics.
--  Write-ups for larger scale projects I've completed. Scroll below to see introductions, and click on the header to see the full write-up page.
+-  Write-ups about projects I've completed.
 
 <br>
 
@@ -15,21 +17,16 @@ title: Home
 
 Shellbin is a microservice architecture project that I built to exercise my understanding of CI/CD for cloud-native applications.
 
-It's named shellbin because it's a pastebin clone that you can access using your shell, without even needing curl.
+It's named shellbin because it's a pastebin clone that you can access with your shell using Unix pipes and the `netcat` utility.
 
 ```fish
 cat $FILE | nc sb.cat-z.xyz
 ```
 
-Additionally, there is a GUI web-interface that is exposed by a plain-old webserver written in Golang.
+Users can also create pastes using a website front-end written in Golang with server-side rendering.
 
-The CLI and the web-interface both talk with the same decoupled microservice which itself talks to the database. 
+The CLI and the web front-end both talk with the same decoupled microservice which itself talks to the database. 
 This relationship is expressed in the diagram below.
-
-
-<!--ai--done -->
-  <!-- this part of the graph is hard to read. is there anyway to force a specific class styling on it? I want to give it white text -->
-  <!--subgraph K8s["Kubernetes: shellbin"]-->
 
 ```mermaid
 flowchart LR
@@ -80,4 +77,12 @@ However, I learned a lot about Kubernetes in the process, and even had the oppor
 
 My local kubernetes cluster, lovingly named `Hell pit`.
 
+The cluster is fully GitOps enabled, so you can [see the source code here.](https://example.com/)
+
+
 <img src="/images/cluster.png" alt="Kubernetes cluster test bench" style="width: 50%; display: block; margin: 0 auto;">
+
+### Cluster Description
+- Cluster is GitOps enabled using FluxCD
+- Grafana metrics systems
+- 24 cores and 48GB of ram over three BEASTLY dell 7060s (this would be considered high performance computing back in the 90s.)

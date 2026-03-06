@@ -1,8 +1,18 @@
+:root {
+  --color-bg-page: #171113;
+  --color-link-primary: #ffc8f3;
+  --color-text-primary: #e8f0f7;
+  --color-text-muted: #cbd9e5;
+  --color-border-table: #9fb3c8;
+  --color-surface-code: #27282290;
+  --color-shadow-soft: #1f2a3555;
+}
+
+/* Page shell */
 html {
   min-height: 100%;
   isolation: isolate;
-  background:
-    linear-gradient(180deg, #171113 0%, #171113 100%);
+  background: linear-gradient(180deg, var(--color-bg-page) 0%, var(--color-bg-page) 100%);
 }
 
 html::before {
@@ -21,7 +31,7 @@ html::before {
 body {
   position: relative;
   z-index: 1;
-  background: #12131620;
+  background: #00000012;
   color: #fceff4;
   max-width: 800px;
   margin: auto;
@@ -30,135 +40,193 @@ body {
   font-family: Optima, Candara, Calibri, Arial, sans-serif;
 }
 
+main {
+  hyphens: auto;
+}
+
+/* Global links */
 a {
-  color: #ffc8f3;
+  /*ai--done set a link-color variable for this hex, and use that variable in all locations.
+
+  in fact, in anyplace a hex color is repeated, create an well-named variable and use that for everything
+
+  place vars the very top
+
+ */
+  color: var(--color-link-primary);
 }
 
 a:hover,
 a:focus {
-  color: #ffc8f3;
+  color: var(--color-link-primary);
 }
 
-/* header and footer areas */
-.menu { padding: 0; }
-.menu li { display: inline-block; }
-.menu li + li { margin-left: 0.7rem; }
+/* Header, menu, and article metadata */
+.menu,
+.article-meta,
+footer {
+  text-align: center;
+}
+
+.menu {
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu li + li {
+  margin-left: 0.7rem;
+}
+
 .menu a {
   text-decoration: none;
-  color: #e8f0f7;
-  background: #435a71;
+  color: var(--color-link-primary);
+  background: none;
   padding: 2px 8px;
   border-radius: 1px;
 }
-.menu, .article-meta, footer { text-align: center; }
-.title { font-size: 0.9em; }
+
+.title {
+  font-size: 0.9em;
+}
+
 .article-meta {
   background: none;
   padding: 0;
 }
+
 .article-meta h2 {
   margin-bottom: 0.2rem;
   font-size: 1.2rem;
   line-height: 1.25;
 }
+
 .article-meta h3 {
   margin-top: 0;
-  color: #cbd9e5;
+  color: var(--color-text-muted);
   font-size: 0.92rem;
   font-weight: 400;
 }
 
+/* Post index */
 .post-list {
   margin-top: 1.25rem;
 }
+
 .post-list-item {
   margin: 0;
   padding: 0.8rem 0;
 }
+
 .index-title {
   margin: 0;
-  line-height: 1.00;
+  line-height: 1;
 }
+
 .index-title a {
-  /*color: #e8f0f7;*/
-  font-size: 1.0rem;
+  /* color: var(--color-text-primary); */
+  font-size: 1rem;
   line-height: 0.85em;
   text-decoration: none;
 }
+
 .index-title a:hover,
 .index-title a:focus {
   text-decoration: underline;
 }
+
 .index-date {
   margin: 0.2rem 0 0;
   color: #b7c7d5;
-  font-size: 1.0rem;
+  font-size: 1rem;
   line-height: 0.85em;
   font-weight: 400;
 }
+
+/* Footer */
 footer {
-  color: #cbd9e5;
+  color: var(--color-text-muted);
 }
+
 footer a {
   text-decoration: none;
   color: #cbe7ff;
 }
+
+/* Content elements */
 hr {
-  border-style: dashed;
-  color: #8ea4b8;
+  color: #351D30;
+  border-style: solid;
 }
 
-/* code */
+blockquote {
+  background: #3b4f63;
+  border-left: 5px solid #9cb9d3;
+  padding: 3px 1em;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+/* Code and math */
 pre {
-  background: #27282290;
+  background: var(--color-surface-code);
   border: 1px solid #2e3943;
-  box-shadow: 2px 2px 5px #1f2a3555;
+  box-shadow: 2px 2px 5px var(--color-shadow-soft);
   padding: 1em;
   overflow-x: auto;
 }
+
 code {
-    background: #27282290;
-    color: #e8f0f7;
+  background: var(--color-surface-code);
+  color: var(--color-text-primary);
 }
-pre code { background: none; }
+
+pre code {
+  background: none;
+}
+
+.katex {
+  color: var(--color-text-primary);
+}
 
 /* Mermaid diagrams */
 .mermaid {
   background: #ffffff09;
   border: 1px solid #272822;
-
-  box-shadow: 2px 2px 5px #1f2a3555;
+  box-shadow: 2px 2px 5px var(--color-shadow-soft);
   padding: 0.8em;
   overflow-x: auto;
 }
+
 .mermaid svg {
   max-width: 100%;
   height: auto;
 }
 
-/* misc elements */
-img, iframe, video { max-width: 100%; }
-main { hyphens: auto; }
-blockquote {
-  background: #3b4f63;
-  border-left: 5px solid #9cb9d3;
-  padding: 3px 1em 3px;
-}
-
-hr {
-    color: #351D30;
-    border-style: solid;
-}
-
+/* Tables */
 table {
   margin: auto;
-  border-top: 1px solid #9fb3c8;
-  border-bottom: 1px solid #9fb3c8;
+  border-top: 1px solid var(--color-border-table);
+  border-bottom: 1px solid var(--color-border-table);
 }
-table thead th { border-bottom: 1px solid #7f94a8; }
-th, td { padding: 5px; }
-thead, tfoot, tr:nth-child(even) { background: #3d5166; }
 
-.katex {
-  color: #e8f0f7;
+table thead th {
+  border-bottom: 1px solid #7f94a8;
+}
+
+th,
+td {
+  padding: 5px;
+}
+
+thead,
+tfoot,
+tr:nth-child(even) {
+  background: #3d5166;
 }

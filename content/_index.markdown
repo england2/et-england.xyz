@@ -9,9 +9,9 @@ title: Home
 This site has:
 
 
-<!--ai-- resume leads to file named resume.pdf -->
+<!--ai--done resume leads to file named resume.pdf -->
 
-- My [resume](/resume/).
+- My [resume](/resume.pdf).
 - [All articles](/all-posts/) about various technical topics.
 -  Write-ups about some personal projects I've completed (see below).
 

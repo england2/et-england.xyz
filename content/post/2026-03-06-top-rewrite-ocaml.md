@@ -11,7 +11,6 @@ slug = "top-rewrite-ocaml"
 - My goal for this project is to _only use the standard ocaml library in addition to `base`_. There are many great libraries for interacting with Linux, but using them would take away some of the fun.
 - I'm new to ocaml! Feel free to [contact me](/mail://elan.thomas.england@gmail.com/) with any comments or corrections.
 
-
 ## What is `top`?
 
 ## Exploring the /proc/ folder and deciding our program structure
@@ -22,10 +21,10 @@ No, we don't have to invoke a bunch of nastly, low-level system calls to get the
 
 Of course, I'm talking about the `/proc/` folder in Linux, which is short for "process".
 
-Let's inspect the `/proc/` folder using df.
+Let's inspect `/proc/` with df.
 
-```fish
-/proc % df .
+```txt
+$ df /proc
 Filesystem      Size  Used Avail Use% Mounted on
 proc               0     0     0    - /proc
 ```
@@ -34,6 +33,6 @@ Because we wont be using libraries, it's important to understand what's happenin
 The file system of `/proc/` is just `proc`. What's actually happening here?
 
 
-[This kernel.org article](/https://docs.kernel.org/filesystems/proc.html/) goes into a lot more detail about `/proc/`.
+[This kernel.org article](https://docs.kernel.org/filesystems/proc.html) goes into a lot more detail about `/proc/`.
 
 ## Our first step of experimentation will be just print every

@@ -1,5 +1,6 @@
 :root {
-  --color-bg-page: #171113;
+  /*--color-bg-page: #171113;*/
+  --color-bg-page: #0d0407;
   --color-link-primary: #ffc8f3;
   --color-text-primary: #e8f0f7;
   --color-text-muted: #cbd9e5;
@@ -230,7 +231,8 @@ tr:nth-child(even) {
 /* Fonts */
 
 body {
-  font-family: "Writer", "Courier New", Courier, monospace;
+  /*font-family: "Writer", "Courier New", Courier, monospace;*/
+  font-family: "Sans";
   font-size: 0.95em;
 }
 

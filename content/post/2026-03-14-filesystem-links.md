@@ -1,7 +1,7 @@
 +++
 title = "Saving links to webpages the Unix way"
 date = 2026-03-14
-slug = "dead-simple-filesystem-links"
+slug = "filesystem-links"
 +++
 
 When I take notes on a technical article I make a new directory with example code to experiment with.
@@ -50,7 +50,7 @@ disown
 
 ### Make it official
 
-Here's how we can web links recognized by the OS on Linux!
+Here's how we can web links recognized by the OS.
 
 We need a desktop entry
 
@@ -78,15 +78,7 @@ And a mime type
 </mime-info>
 ```
 
+<!-- finish here -->
+
 
 <br>
-    
-### Demo
-
-<br>
-
-Here's a demo showing off this next-level, earth-shattering computer science discovery.
-
-(I just think gifs are cool, okay?)
-
-![Animated demo of opening a `.weblink` file](/images/transparent.gif)

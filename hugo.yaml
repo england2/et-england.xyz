@@ -7,6 +7,10 @@ disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
 
+caches:
+  images:
+    dir: :cacheDir/images
+
 permalinks:
   note: "/note/:year/:month/:day/:slug/"
   post: "/:slug/"

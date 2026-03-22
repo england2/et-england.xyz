@@ -4,10 +4,11 @@ date = 2026-03-14
 slug = "filesystem-links"
 +++
 
-When I take notes on a technical article I make a new directory with example code to experiment with.
-In these situations, it's useful to keep the link to the article in this same directory.
+When I take notes on a technical article I make a directory with example code to experiment with.
 
-Here's a script that makes a special 'weblink' file, which can be opened later.
+In these situations it's useful to keep a link to the article in the same directory.
+
+Here's a script that makes a special 'weblink' file.
 
 ```bash
 # file: ~/bin/mkwl ("make web link")
@@ -25,14 +26,13 @@ echo "$filename"
 echo $url > $filename
 ```
 
-So to create a weblink we just do
+To create a weblink we just do
 
 ```txt
 $ mkwl https://medium.com/@siacavazzi/how-i-made-a-robust-web-scraper-d17060470bd8
 ```
 
 And we get
-
 
 ```txt
 $ ls
@@ -44,13 +44,20 @@ And now we need a script to open it
 ```bash
 # file: ~/bin/owl ("open web link")
 #!/usr/bin/env fish
-xdg-open (cat $argv[1] | head -n1) >/dev/null 2>&1 &
+firefox (cat $argv[1] | head -n1) >/dev/null 2>&1 &
 disown
 ```
 
-### Make it official
+Which we might call like so
 
-Here's how we can web links recognized by the OS.
+```bash
+owl medium.com_@siacavazzi_how-i-made-a-robust-web-scraper-d17060470.weblink
+```
+
+
+## Make it official
+
+Here's how we can weblinks recognized by `xdg` in Linux.
 
 We need a desktop entry
 
@@ -78,7 +85,25 @@ And a mime type
 </mime-info>
 ```
 
-<!-- finish here -->
+Register it
 
+```bash
+update-mime-database ~/.local/share/mime
+update-desktop-database ~/.local/share/applications
+xdg-mime default weblink.desktop application/x-weblink
+```
+
+Check it
+
+```bash
+xdg-mime query filetype example.weblink
+xdg-mime query default application/x-weblink
+```
+
+Then open a link
+
+```bash
+xdg-open example.weblink
+```
 
 <br>

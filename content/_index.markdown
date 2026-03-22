@@ -8,7 +8,6 @@ This is a portfolio website that discusses some projects I've built.
 
 Scroll down to read an introduction to each project, and click the heading to see the full write-up.
 
-<br>
     
 ## [Shellbin](/shellbin/)
 <hr>
@@ -54,16 +53,16 @@ In total, there are 4 discrete container images involved in this project: A web 
 
 As mentioned, the main goal of this project was to experiment with a developement pipeline for these microservices.
 
-The CI/CD pipeline ends up being pretty simple:
+The CI/CD pipeline ends up being pretty simple.
 
-
-- Firstly, the shellbin's Kubernetes deployment relies on a Helm chart that is tracked by the cluster's git repository
-- Then in the shellbin repository, when we push to GitHub, our workflow:
+- First, shellbin's Kubernetes manifests are sourced from a Helm chart that is tracked by ArgoCD
+  - ArgoCD makes sure that the most recent version's of the applications manifests are deployed
+- When we push to the shellbin repo, our GitHub Actions workflow goes something like this:
   - builds the container images, then pushes them to GitHub Container Registry (GHCR)
-  - clones the Kubernetes cluster's declarative git repository
-  - modifies the image tags in the Helm values chart to point to the newly pushed images
-  - commits and pushes the diff that has the new image tags
-- And then ArgoCD picks up changes and the cluster reconciles with the new images
+  - clones the Kubernetes cluster's declarative gitop repository
+  - modifies the image tags in the Helm Chart's values.yml so they point to the newly pushed images
+  - commits and pushes the diff that has the new image tags to cluster's configuration repo
+- And then ArgoCD picks up changes and the cluster deploys updates to the container images and Helm Chart
 
 Read the [full Shellbin write-up here](/shellbin/) for more details.
 
@@ -116,11 +115,9 @@ A commented version of this code is available in the project write-up.
 
 This concurrency pattern is called a "for select loop", which I read about in the very fun book [Concurrency in Go](https://katherine.cox-buday.com/concurrency-in-go/) by Katherine Cox-Buday.
 
-There's a quite a bit involved in this project:
+Here are some of the moving-pieces involved with this project:
 - Website frontend that emulates a terminal, and client-side JS to request a new Unix machine container from the Kubernetes cluster.
 - Containers to run the Unix machine that is served to clients.
 - Synchronization between pseudo-terminal hosting containers and website frontend
-- Kubernetes cluster that orchestrates all containers
-- TODO
 
 Read the [full Webterm write-up here](/shellbin/) for more details.

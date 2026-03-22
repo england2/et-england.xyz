@@ -21,7 +21,7 @@ jobs:
       DART_SASS_VERSION: 1.98.0
       GO_VERSION: 1.26.1
       HUGO_VERSION: 0.158.0
-      HUGO_BASEURL: https://www.et-england.xyz/
+      HUGO_BASEURL: https://www.etengland.me/
       NODE_VERSION: 24.14.0
       TZ: Europe/Oslo
     steps:

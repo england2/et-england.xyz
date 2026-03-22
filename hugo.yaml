@@ -1,4 +1,4 @@
-baseurl: "https://www.et-england.xyz/"
+baseurl: "https://www.etengland.me/"
 languageCode: "en-us"
 title: "Elan England"
 theme: "hugo-xmin"
@@ -25,7 +25,7 @@ menu:
 
 params:
   description: "Portfolio website."
-  footer: "&copy; [Elan England](https://et-england.xyz) {Year} | [Github](https://github.com/england2)"
+  footer: "&copy; [Elan England](https://etengland.me) {Year} | [Github](https://github.com/england2)"
 
 markup:
   highlight:

@@ -70,7 +70,7 @@ Read the [full Shellbin write-up here](/shellbin/) for more details.
 
 <br>
     
-<img src="/images/webterm1.png" alt="Webterm demo" style="width: 70%; display: block; margin: 0 auto;">
+<img src="/images/webterm-web.png" alt="Webterm demo" style="width: 70%; display: block; margin: 0 auto;">
 
 <br>
 

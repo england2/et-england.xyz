@@ -20,40 +20,15 @@ It's named shellbin because it's a pastebin clone that you can access with your 
 cat $FILE | nc sb.cat-z.xyz
 ```
 
-Users can also create pastes using a web front-end written in Go that uses server-side rendering.
+Users can also create pastes with a web front-end written in Go (which uses Server Side Rendering).
 
-The CLI and the web front-end both talk with the same decoupled microservice which itself talks to the database. 
-This relationship is expressed in the diagram below.
+<br>
 
-```mermaid
-flowchart LR
-    Browser[Browser / HTTP client]
-    Netcat[Netcat / TCP client]
+In total, there are 4 distinct container images involved in this project: A web server, a database service, a netcat-receiving-server, and the MySQL database container.
 
-    subgraph K8s["Kubernetes"]
-      WS[webserver<br/>Gin on :4747<br/>Service port 80]
-      NC[nc-server<br/>TCP on :6262<br/>Service targetPort 6262]
-      DB[db-service<br/>Gin on :7272<br/>Service port 80]
-      MYSQL[(MySQL)]
-    end
-    class K8s k8slabel
-    classDef k8slabel color:#ffffff 
+As mentioned, the main goal of this project was to implement a developement pipeline for these microservices.
 
-    Browser -->|GET /, GET /paste/:path, POST /submit| WS
-    Netcat -->|TCP paste content| NC
-
-    WS -->|HTTP POST /processInput| DB
-    WS -->|HTTP POST /servePaste| DB
-    NC -->|HTTP POST /processInput| DB
-
-    DB -->|SQL queries to pastes table| MYSQL
-```
-
-In total, there are 4 discrete container images involved in this project: A web server, a database service, a netcat-receiving-server, and the MySQL database container.
-
-As mentioned, the main goal of this project was to experiment with a developement pipeline for these microservices.
-
-The CI/CD pipeline ends up being pretty simple.
+The pipeline ends up being pretty simple.
 
 - First, shellbin's Kubernetes manifests are sourced from a Helm chart that is tracked by ArgoCD
   - ArgoCD makes sure that the most recent version's of the applications manifests are deployed
@@ -62,7 +37,7 @@ The CI/CD pipeline ends up being pretty simple.
   - clones the Kubernetes cluster's declarative gitop repository
   - modifies the image tags in the Helm Chart's values.yml so they point to the newly pushed images
   - commits and pushes the diff that has the new image tags to cluster's configuration repo
-- And then ArgoCD picks up changes and the cluster deploys updates to the container images and Helm Chart
+- And then ArgoCD picks up changes and the cluster deploys any updates to the container images and Helm Chart
 
 Read the [full Shellbin write-up here](/shellbin/) for more details.
 
@@ -73,20 +48,9 @@ Read the [full Shellbin write-up here](/shellbin/) for more details.
 
 Webterm is a system that allows users to access Unix machines from their web browser.
 
-I wrote this project because I wanted to do something in Kubernetes that sounded really interesting and a bit intimidating. Basically, my goal was to write Go code to interact with the Kubernetes API to create, destroy, and scale pods based on user load, and assign each pod to a user.
+Of note is that there's a binary that allocates and exposes backend terminal instances automatically.
 
-This project was out of my comfort zone and the source code reflects that. 
-Despite that, it actually works!
-
-Building something to process Kubernetes API data myself instead of using a pre-built solution taught me a bit about Kubernetes and Go.
-
-It also allowed me to implement some very neat and famous concurrency patterns in golang.
-
-
-The most interesting part is the following code, which is a essentially a concurrent process watcher that can respond to updates from the pod-scaling system. (TODO fix this explanation)
-
-A commented version of this code is available in the project write-up.
-
+Here's a horrific piece of code which is what happens when you to try interact with the raw Kubernetes API instead of just using [Kubebuilder](https://github.com/kubernetes-sigs/kubebuilder).
 
 ```go
 	for {
@@ -113,7 +77,7 @@ A commented version of this code is available in the project write-up.
 	}
 ```
 
-This concurrency pattern is called a "for select loop", which I read about in the very fun book [Concurrency in Go](https://katherine.cox-buday.com/concurrency-in-go/) by Katherine Cox-Buday.
+Terrible! And kind of cool.
 
 Here are some of the moving-pieces involved with this project:
 - Website frontend that emulates a terminal, and client-side JS to request a new Unix machine container from the Kubernetes cluster.

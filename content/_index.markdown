@@ -17,13 +17,10 @@ Shellbin is a microservice architecture project that I built to exercise my unde
 It's named shellbin because it's a pastebin clone that you can access with your shell using Unix pipes and the `netcat` utility.
 
 ```fish
-cat $FILE | nc sb.cat-z.xyz
+cat $FILE | nc <address> <port>
 ```
 
 Users can also create pastes using a web front-end written in Go that uses server-side rendering.
-
-The CLI and the web front-end both talk with the same decoupled microservice which itself talks to the database. 
-This relationship is expressed in the diagram below.
 
 ```mermaid
 flowchart LR
@@ -51,15 +48,15 @@ flowchart LR
 
 In total, there are 4 discrete container images involved in this project: A web server, a database service, a netcat-receiving-server, and the MySQL database container.
 
-As mentioned, the main goal of this project was to experiment with a developement pipeline for these microservices.
+As mentioned, the main goal of this project was to experiment with a development pipeline for these microservices.
 
-The CI/CD pipeline ends up being pretty simple.
+The CI/CD pipeline ends up being pretty simple:
 
 - First, shellbin's Kubernetes manifests are sourced from a Helm chart that is tracked by ArgoCD
-  - ArgoCD makes sure that the most recent version's of the applications manifests are deployed
+  - ArgoCD makes sure that the most recent versions of the application manifests are deployed
 - When we push to the shellbin repo, our GitHub Actions workflow goes something like this:
   - builds the container images, then pushes them to GitHub Container Registry (GHCR)
-  - clones the Kubernetes cluster's declarative gitop repository
+  - clones the Kubernetes cluster's declarative GitOps repository
   - modifies the image tags in the Helm Chart's values.yml so they point to the newly pushed images
   - commits and pushes the diff that has the new image tags to cluster's configuration repo
 - And then ArgoCD picks up changes and the cluster deploys updates to the container images and Helm Chart

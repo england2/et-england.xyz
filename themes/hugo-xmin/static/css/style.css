@@ -63,7 +63,7 @@ ol {
 }
 
 li + li {
-  margin-top: 0.35rem;
+  margin-top: 0.10rem;
 }
 
 h1,
@@ -117,9 +117,33 @@ h6 a:focus {
   text-decoration-color: currentColor;
 }
 
-hr {
-  margin: 2rem 0;
+.section-heading-with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.heading-link-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.8rem;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.heading-link-icon:hover,
+.heading-link-icon:focus {
+  color: var(--color-link-hover);
+}
+
+.heading-link-icon img {
+  display: block;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0;
   border: 0;
+}
+
+hr {
   border-top: 1px solid var(--color-border);
 }
 

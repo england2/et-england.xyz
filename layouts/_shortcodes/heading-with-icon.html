@@ -1,0 +1,18 @@
+{{- $level := or (.Get "level") "2" -}}
+{{- $tag := printf "h%s" $level -}}
+{{- $text := .Get "text" -}}
+{{- $href := .Get "href" -}}
+{{- $iconHref := .Get "icon_href" -}}
+{{- $iconSrc := or (.Get "icon_src") "/images/github.svg" -}}
+{{- $iconLabel := or (.Get "icon_label") (printf "%s source code" $text) -}}
+
+{{- printf "<%s class=\"section-heading-with-icon\">" $tag | safeHTML -}}
+  <a href="{{ $href }}">{{ $text }}</a>
+  <a
+    class="heading-link-icon"
+    href="{{ $iconHref }}"
+    aria-label="{{ $iconLabel }}"
+  >
+    <img src="{{ $iconSrc }}" alt="">
+  </a>
+{{- printf "</%s>" $tag | safeHTML -}}

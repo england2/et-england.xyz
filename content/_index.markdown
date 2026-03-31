@@ -8,8 +8,12 @@ This is a portfolio website that discusses some projects I've built.
 
 Scroll down to read an introduction to each project, and click the heading to see the full write-up.
 
-    
-## [Shellbin](/shellbin/)
+{{< heading-with-icon
+  text="Shellbin"
+  href="/shellbin/"
+  icon_href="https://www.github.com/england2/shellbin"
+>}}
+
 
 Shellbin is a microservice architecture project that I built to exercise my understanding of CI/CD for cloud-native applications.
 
@@ -62,9 +66,14 @@ The CI/CD pipeline ends up being pretty simple:
 
 Read the [full Shellbin write-up here](/shellbin/) for more details.
 
-<br>
+<hr>
     
-## [Webterm](/webterm/)
+{{< heading-with-icon
+  text="Webterm"
+  href="/webterm/"
+  icon_href="https://www.github.com/england2/webterm"
+>}}
+
 
 <br>
     

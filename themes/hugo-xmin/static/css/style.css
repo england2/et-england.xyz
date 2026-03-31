@@ -36,6 +36,27 @@ main {
   hyphens: auto;
 }
 
+.site-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-family: "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.site-nav a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
 a {
   color: var(--color-link);
   text-decoration-color: rgba(120, 169, 255, 0.45);
@@ -128,22 +149,25 @@ h6 a:focus {
   margin-left: 0.8rem;
   color: var(--color-text);
   text-decoration: none;
+  transition: opacity 120ms ease, transform 120ms ease;
 }
 
 .heading-link-icon:hover,
 .heading-link-icon:focus {
-  color: var(--color-link-hover);
+  opacity: 0.40;
+  transform: translateY(-0.5px);
 }
 
-.heading-link-icon img {
+.heading-link-icon svg {
   display: block;
   width: 1.35rem;
   height: 1.35rem;
   margin: 0;
-  border: 0;
+  fill: #ffffff;
 }
 
 hr {
+  border: 0;
   border-top: 1px solid var(--color-border);
 }
 
@@ -170,6 +194,7 @@ blockquote p:last-child {
 .article-meta,
 footer {
   text-align: center;
+  font-family: "Sans", "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
 }
 
 .article-meta {
@@ -207,9 +232,11 @@ footer {
   grid-template-columns: 7.5rem minmax(0, 1fr);
   gap: 1rem;
   align-items: baseline;
-  padding: 0.35rem 0;
+  padding: 0.12rem 0;
+  line-height: 1.4;
 }
 
+.index-title,
 .index-date,
 footer,
 .menu,
@@ -229,6 +256,7 @@ table {
 
 .index-title {
   color: var(--color-text);
+  font-size: 0.85rem;
   text-decoration: none;
 }
 

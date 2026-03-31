@@ -25,7 +25,7 @@ menu:
 
 params:
   description: "Portfolio website."
-  footer: "[Elan England](https://etengland.me) | [Github](https://github.com/england2) | [Contact](mailto://<firstnamelastname>@protonmail.com) "
+  footer: "[Home](https://etengland.me) | [Github](https://github.com/england2) | [Contact](mailto://<firstnamelastname>@protonmail.com) "
 
 markup:
   highlight:

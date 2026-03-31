@@ -143,6 +143,8 @@ h6 a:focus {
   align-items: center;
 }
 
+/* github heading link css*/
+
 .heading-link-icon {
   display: inline-flex;
   align-items: center;
@@ -155,7 +157,6 @@ h6 a:focus {
 .heading-link-icon:hover,
 .heading-link-icon:focus {
   opacity: 0.40;
-  transform: translateY(-0.5px);
 }
 
 .heading-link-icon svg {
@@ -194,23 +195,25 @@ blockquote p:last-child {
 .article-meta,
 footer {
   text-align: center;
-  font-family: "Sans", "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
+  font-family: "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
 }
 
 .article-meta {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .article-meta h2 {
   margin: 0;
-  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-family: "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
+  font-size: 1.20rem;
 }
 
 .article-meta h3 {
   margin: 0.45rem 0 0;
   color: var(--color-text-muted);
-  font-size: 0.95rem;
   font-weight: 400;
+  font-family: "Noto Sans Mono", "Anonymous Pro", ui-monospace, monospace;
+  font-size: 1.00rem;
 }
 
 .post-list {
